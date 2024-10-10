@@ -215,6 +215,14 @@ p code {
 
 
 /* new */
+.generation-demo-container {
+  position: relative;
+  width: 50%;
+  margin: 0%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
 .video-demo-container {
   position: relative;
   width: 50%;

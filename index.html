@@ -83,6 +83,7 @@
   
   
   
+  <!-- datasets demo -->
   <div class="content">
     <h3 style="text-align:center"><strong>Demo of Koala-36M</strong></h3>
     <p style="text-align: center; font-size: medium;">
@@ -200,28 +201,376 @@
   
   
   
-  
+  <!-- pipeline -->
   <div class="content">
     <h3 style="text-align:center"><strong>Our Collection Pipeline</strong></h3>
     <p style="text-align: center; font-size: medium;">
-      We propose a refined data processing pipeline to further improve the consistency between fine-grained conditions and video content, including transition detection methods, structured caption system, Video Training Suitability Score and metric conditions.
+      We propose a refined data processing pipeline to further improve the consistency between fine-grained conditions and video content, 
+      <br>including transition detection methods, structured caption system, Video Training Suitability Score and metric conditions.
     </p>
   
     <div id="teasers">
       <img src="src/img/pipeline.png", style="display: block; margin: 0 auto; width: 80%;">
-      <figcaption></figcaption>
+      <figcaption>
+        First, we propose a more accurate and efficient transition detection method for video splitting. 
+        Then we caption splitted videos with an average length of 200 words based on our structured caption system. 
+        Subsequently, we train a Video Training Suitability Score (VTSS) for data filtering to prevent high-quality data from the erroneous deletion. 
+        Finally, we introduce multiple data sub-metrics as Metric Conditions into the generation model to enrich the fine-grained conditions.
+      </figcaption>
     </div>
   
     <br>
   
-    <p>
-      First, we propose a more accurate and efficient transition detection method for video splitting. 
-      Then we caption splitted videos with an average length of 200 words based on our structured caption system. 
-      Subsequently, we train a Video Training Suitability Score (VTSS) for data filtering to prevent high-quality data from the erroneous deletion. 
-      Finally, we introduce multiple data sub-metrics as Metric Conditions into the generation model to enrich the fine-grained conditions.
-    </p>
-  
   </div>
   
+
+
+
+  <!-- datasets comparison -->
+  <div class="content">
+    <h3 style="text-align:center"><strong>Compare with Other Datasets</strong></h3>
+    <p style="text-align: center; font-size: medium;">
+      Koala-36M dataset simultaneously provides a large number of videos <strong>(over 10M)</strong> and high-quality fine-grained text captions <strong>(longer than 200 words)</strong>, 
+      <br>significantly improving the quality of large scale video datasets
+    </p>
+
+  
+    <table style="width: 80%; margin: 0 auto; border-collapse: collapse; text-align: center; vertical-align: middle;">
+      <thead>
+        <tr style="border-bottom: 3px solid black; border-top: 3px solid black;">
+          <th style="padding: 8px;">Dataset</th>
+          <th style="padding: 8px;">#Videos</th>
+          <th style="padding: 8px;">Average Text Length(words)</th>
+          <th style="padding: 8px;">Total Video Length(hours)</th>
+          <th style="padding: 8px;">Text</th>
+          <th style="padding: 8px;">Filtering</th>
+          <th style="padding: 8px;">Resolution</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid black; border-top: 3px solid black;">
+          <td style="padding: 8px;">LSMDC</td>
+          <td style="padding: 8px;">118K</td>
+          <td style="padding: 8px;">7.0</td>
+          <td style="padding: 8px;">158</td>
+          <td style="padding: 8px;">Manual</td>
+          <td style="padding: 8px;">Sub-metrics</td>
+          <td style="padding: 8px;">1080p</td>
+        </tr>
+        <tr style="border-bottom: 1px solid black;">
+          <td style="padding: 8px;">DiDeMo</td>
+          <td style="padding: 8px;">27K</td>
+          <td style="padding: 8px;">8.0</td>
+          <td style="padding: 8px;">87</td>
+          <td style="padding: 8px;">Manual</td>
+          <td style="padding: 8px;">Sub-metrics</td>
+          <td style="padding: 8px;">-</td>
+        </tr>
+        <tr style="border-bottom: 1px solid black;">
+          <td style="padding: 8px;">YouCook2</td>
+          <td style="padding: 8px;">14K</td>
+          <td style="padding: 8px;">8.8</td>
+          <td style="padding: 8px;">176</td>
+          <td style="padding: 8px;">Manual</td>
+          <td style="padding: 8px;">Sub-metrics</td>
+          <td style="padding: 8px;">-</td>
+        </tr>
+        <tr style="border-bottom: 1px solid black;">
+          <td style="padding: 8px;">ActivityNet</td>
+          <td style="padding: 8px;">100K</td>
+          <td style="padding: 8px;">13.5</td>
+          <td style="padding: 8px;">849</td>
+          <td style="padding: 8px;">Manual</td>
+          <td style="padding: 8px;">Sub-metrics</td>
+          <td style="padding: 8px;">-</td>
+        </tr>
+        <tr style="border-bottom: 1px solid black;">
+          <td style="padding: 8px;">MSR-VTT</td>
+          <td style="padding: 8px;">10K</td>
+          <td style="padding: 8px;">9.3</td>
+          <td style="padding: 8px;">40</td>
+          <td style="padding: 8px;">Manual</td>
+          <td style="padding: 8px;">Sub-metrics</td>
+          <td style="padding: 8px;">240p</td>
+        </tr>
+        <tr style="border-bottom: 1px solid black;">
+          <td style="padding: 8px;">VATEX</td>
+          <td style="padding: 8px;">41K</td>
+          <td style="padding: 8px;">15.2</td>
+          <td style="padding: 8px;">~115</td>
+          <td style="padding: 8px;">Manual</td>
+          <td style="padding: 8px;">Sub-metrics</td>
+          <td style="padding: 8px;">-</td>
+        </tr>
+        <tr style="border-bottom: 1px solid black;">
+          <td style="padding: 8px;">WebVid-10M</td>
+          <td style="padding: 8px;">10M</td>
+          <td style="padding: 8px;">12.0</td>
+          <td style="padding: 8px;">52K</td>
+          <td style="padding: 8px;">Alt-Text</td>
+          <td style="padding: 8px;">Sub-metrics</td>
+          <td style="padding: 8px;">360p</td>
+        </tr>
+        <tr style="border-bottom: 1px solid black;">
+          <td style="padding: 8px;">HowTo100M</td>
+          <td style="padding: 8px;">136M</td>
+          <td style="padding: 8px;">4.0</td>
+          <td style="padding: 8px;">135K</td>
+          <td style="padding: 8px;">ASR</td>
+          <td style="padding: 8px;">Sub-metrics</td>
+          <td style="padding: 8px;">240p</td>
+        </tr>
+        <tr style="border-bottom: 1px solid black;">
+          <td style="padding: 8px;">HD-VILA-100M</td>
+          <td style="padding: 8px;">103M</td>
+          <td style="padding: 8px;">17.6</td>
+          <td style="padding: 8px;">760.3K</td>
+          <td style="padding: 8px;">ASR</td>
+          <td style="padding: 8px;">Sub-metrics</td>
+          <td style="padding: 8px;">720p</td>
+        </tr>
+        <tr style="border-bottom: 1px solid black;">
+          <td style="padding: 8px;">VidGen-1M</td>
+          <td style="padding: 8px;">1M</td>
+          <td style="padding: 8px;">89.3</td>
+          <td style="padding: 8px;">-</td>
+          <td style="padding: 8px;">Generated</td>
+          <td style="padding: 8px;">Sub-metrics</td>
+          <td style="padding: 8px;">720p</td>
+        </tr>
+        <tr style="border-bottom: 1px solid black;">
+          <td style="padding: 8px;">MiraData</td>
+          <td style="padding: 8px;">330K</td>
+          <td style="padding: 8px;">318.0</td>
+          <td style="padding: 8px;">16K</td>
+          <td style="padding: 8px;">Generated & Struct</td>
+          <td style="padding: 8px;">Sub-metrics</td>
+          <td style="padding: 8px;">720p</td>
+        </tr>
+        <tr style="border-bottom: 1px solid black;">
+          <td style="padding: 8px;">Panda-70M</td>
+          <td style="padding: 8px;">70M</td>
+          <td style="padding: 8px;">13.2</td>
+          <td style="padding: 8px;">167K</td>
+          <td style="padding: 8px;">Generated</td>
+          <td style="padding: 8px;">Sub-metrics</td>
+          <td style="padding: 8px;">720p</td>
+        </tr>
+        <tr style="border-bottom: 3px solid black; border-top: 3px solid black;">
+          <td style="padding: 8px;">Koala-36M</td>
+          <td style="padding: 8px;">36M</td>
+          <td style="padding: 8px;">202.1</td>
+          <td style="padding: 8px;">172K</td>
+          <td style="padding: 8px;">Generated & Struct</td>
+          <td style="padding: 8px;">Expert Model</td>
+          <td style="padding: 8px;">720p</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <br>
+  
+  </div>
+
+
+
+
+  <!-- generation results -->
+  <div class="content">
+    <h3 style="text-align:center"><strong>Generation Results Trained on Datasets</strong></h3>
+    <p style="text-align: center; font-size: medium;">
+      We train the same generation model from scratch on different datasets in <strong>256x256</strong> resolution for comparison. All models are passed through <strong>140M</strong> data samples in total.
+      <br>The generation model achieve the optimal performance on Koala-36M, with both the best video quality and text-video consistency.
+    </p>
+
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 0px;">
+    
+      <div class="generation-demo-container">
+        <div class="video-demo-container" style="width: 95%; display: flex; justify-content: space-between;">
+          <div class="video-teaser-container" style="width: 50%">
+            <video playsinline autoplay="autoplay" loop="loop" muted="muted" type="video/mp4" class="video-teaser" src="src/videos/different_dataset/A happy fuzzy panda playing guitar nearby a campfire, snow mountain in the background/Koala36M-condition.mp4"></video>
+            <div class="hover-overlay responsive-text" style="color: #ffffff">
+              <p style="font-weight: bold; font-size: 25px; line-height: 1.2;font-family: cursive;">
+                Koala-36M</p>
+            </div>
+          </div>
+
+          <div class="video-teaser-container" style="width: 50%">
+            <video playsinline autoplay="autoplay" loop="loop" muted="muted" type="video/mp4" class="video-teaser" src="src/videos/different_dataset/A happy fuzzy panda playing guitar nearby a campfire, snow mountain in the background/Panda-70M.mp4"></video>
+            <div class="hover-overlay responsive-text" style="color: #ffffff">
+              <p style="font-weight: bold; font-size: 25px; line-height: 1.2;font-family: cursive;">
+                Panda-70M</p>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size: 16px; line-height: 1.2; text-align: center; width: 95%;">
+          "A happy fuzzy panda playing guitar nearby a campfire, snow mountain in the background."
+        </p><br>
+      
+      </div>
+
+
+      <div class="generation-demo-container">
+        <div class="video-demo-container" style="width: 95%; display: flex; justify-content: space-between;">
+          <div class="video-teaser-container" style="width: 50%">
+            <video playsinline autoplay="autoplay" loop="loop" muted="muted" type="video/mp4" class="video-teaser" src="src/videos/different_dataset/a truck turning a corner/Koala36M-condition.mp4"></video>
+            <div class="hover-overlay responsive-text" style="color: #ffffff">
+              <p style="font-weight: bold; font-size: 25px; line-height: 1.2;font-family: cursive;">
+                Koala-36M</p>
+            </div>
+          </div>
+
+          <div class="video-teaser-container" style="width: 50%">
+            <video playsinline autoplay="autoplay" loop="loop" muted="muted" type="video/mp4" class="video-teaser" src="src/videos/different_dataset/a truck turning a corner/Panda-70M.mp4"></video>
+            <div class="hover-overlay responsive-text" style="color: #ffffff">
+              <p style="font-weight: bold; font-size: 25px; line-height: 1.2;font-family: cursive;">
+                Panda-70M</p>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size: 16px; line-height: 1.2; text-align: center; width: 95%;">
+          "A truck turning a corner."
+        </p><br>
+      
+      </div>
+
+
+
+      <div class="generation-demo-container">
+        <div class="video-demo-container" style="width: 95%; display: flex; justify-content: space-between;">
+          <div class="video-teaser-container" style="width: 50%">
+            <video playsinline autoplay="autoplay" loop="loop" muted="muted" type="video/mp4" class="video-teaser" src="src/videos/different_dataset/A cat wearing sunglasses at a pool/Koala36M-condition.mp4"></video>
+            <div class="hover-overlay responsive-text" style="color: #ffffff">
+              <p style="font-weight: bold; font-size: 25px; line-height: 1.2;font-family: cursive;">
+                Koala-36M</p>
+            </div>
+          </div>
+
+          <div class="video-teaser-container" style="width: 50%">
+            <video playsinline autoplay="autoplay" loop="loop" muted="muted" type="video/mp4" class="video-teaser" src="src/videos/different_dataset/A cat wearing sunglasses at a pool/Panda-70M.mp4"></video>
+            <div class="hover-overlay responsive-text" style="color: #ffffff">
+              <p style="font-weight: bold; font-size: 25px; line-height: 1.2;font-family: cursive;">
+                Panda-70M</p>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size: 16px; line-height: 1.2; text-align: center; width: 95%;">
+          "A cat wearing sunglasses at a pool."
+        </p><br>
+      
+      </div>
+
+
+
+
+      <div class="generation-demo-container">
+        <div class="video-demo-container" style="width: 95%; display: flex; justify-content: space-between;">
+          <div class="video-teaser-container" style="width: 50%">
+            <video playsinline autoplay="autoplay" loop="loop" muted="muted" type="video/mp4" class="video-teaser" src="src/videos/different_dataset/A teddy bear washing the dishes/Koala36M-condition.mp4"></video>
+            <div class="hover-overlay responsive-text" style="color: #ffffff">
+              <p style="font-weight: bold; font-size: 25px; line-height: 1.2;font-family: cursive;">
+                Koala-36M</p>
+            </div>
+          </div>
+
+          <div class="video-teaser-container" style="width: 50%">
+            <video playsinline autoplay="autoplay" loop="loop" muted="muted" type="video/mp4" class="video-teaser" src="src/videos/different_dataset/A teddy bear washing the dishes/Panda-70M.mp4"></video>
+            <div class="hover-overlay responsive-text" style="color: #ffffff">
+              <p style="font-weight: bold; font-size: 25px; line-height: 1.2;font-family: cursive;">
+                Panda-70M</p>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size: 16px; line-height: 1.2; text-align: center; width: 95%;">
+          "A teddy bear washing the dishes."
+        </p><br>
+      
+      </div>
+
+
+
+      <div class="generation-demo-container">
+        <div class="video-demo-container" style="width: 95%; display: flex; justify-content: space-between;">
+          <div class="video-teaser-container" style="width: 50%">
+            <video playsinline autoplay="autoplay" loop="loop" muted="muted" type="video/mp4" class="video-teaser" src="src/videos/different_dataset/Sunset time lapse at the beach with moving clouds and colors in the sky/Koala36M-condition.mp4"></video>
+            <div class="hover-overlay responsive-text" style="color: #ffffff">
+              <p style="font-weight: bold; font-size: 25px; line-height: 1.2;font-family: cursive;">
+                Koala-36M</p>
+            </div>
+          </div>
+
+          <div class="video-teaser-container" style="width: 50%">
+            <video playsinline autoplay="autoplay" loop="loop" muted="muted" type="video/mp4" class="video-teaser" src="src/videos/different_dataset/Sunset time lapse at the beach with moving clouds and colors in the sky/Panda-70M.mp4"></video>
+            <div class="hover-overlay responsive-text" style="color: #ffffff">
+              <p style="font-weight: bold; font-size: 25px; line-height: 1.2;font-family: cursive;">
+                Panda-70M</p>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size: 16px; line-height: 1.2; text-align: center; width: 95%;">
+          "Sunset time lapse at the beach with moving clouds and colors in the sky."
+        </p><br>
+      
+      </div>
+
+
+      <div class="generation-demo-container">
+        <div class="video-demo-container" style="width: 95%; display: flex; justify-content: space-between;">
+          <div class="video-teaser-container" style="width: 50%">
+            <video playsinline autoplay="autoplay" loop="loop" muted="muted" type="video/mp4" class="video-teaser" src="src/videos/different_dataset/A person is filling eyebrows/Koala36M-condition.mp4"></video>
+            <div class="hover-overlay responsive-text" style="color: #ffffff">
+              <p style="font-weight: bold; font-size: 25px; line-height: 1.2;font-family: cursive;">
+                Koala-36M</p>
+            </div>
+          </div>
+
+          <div class="video-teaser-container" style="width: 50%">
+            <video playsinline autoplay="autoplay" loop="loop" muted="muted" type="video/mp4" class="video-teaser" src="src/videos/different_dataset/A person is filling eyebrows/Panda-70M.mp4"></video>
+            <div class="hover-overlay responsive-text" style="color: #ffffff">
+              <p style="font-weight: bold; font-size: 25px; line-height: 1.2;font-family: cursive;">
+                Panda-70M</p>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size: 16px; line-height: 1.2; text-align: center; width: 95%;">
+          "A person is filling eyebrows."
+        </p><br>
+      
+      </div>
+
+
+    </div>
+    <br>
+  
+  </div>
+
+
+
+  <!-- citation -->
+  <div class="content">
+    <h3 style="text-align:center"><strong>Citation</strong></h3>
+  
+    <pre><code>@article{,
+      title   = {},
+      author  = {},
+      journal = {},
+      year    = {}
+  }</code></pre>
+  
+  </div>
+
+
+  <!-- footnote -->
+  <footer class="footer" style="text-align:center">
+    <div class="footer-bottom text-center py-5  theme-bg-dark">
+      <small class="copyright">Modified from <a class="theme-link" href="https://liveportrait.github.io/" target="_blank">liveportrait's template.</a></small>
+    </div>
+  </footer>
   
   
